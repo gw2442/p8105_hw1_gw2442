@@ -40,5 +40,39 @@ ggplot(penguins, aes(x = bill_length_mm , y = flipper_length_mm,
 ggsave("penguins_scatter_plot.pdf")
 ```
 
+# Problem 2
+### Creating a dataframe 
+```{r dataframe}
+problem2_df = tibble(
+  vec_numeric = rnorm(10, mean = 0 , sd = 1),
+  vec_logical = vec_numeric > 0,
+  vec_char = c("One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"),
+  vec_factor = factor(c("1-3", "1-3", "1-3", "4-6", "4-6", "4-6", "7-10", "7-10", "7-10", "7-10"))
+)
+```
+### Taking the mean of each variable in dataframe `problem2_df`
+```{r dataframe_mean}
+mean(problem2_df$vec_numeric)
+mean(problem2_df$vec_logical)
+mean(problem2_df$vec_char)
+mean(problem2_df$vec_factor)
+```
+There is an output for the variables `vec_numeric`  and `vec_logical` when calculating the mean. There was no mean output for varaibles `vec_char` and `vec_factor`.  
 
+### Converting variables to numeric variables
+```{r dataframe_numeric, results = 'hide', warning = FALSE}
+as.numeric(problem2_df$vec_logical)
+as.numeric(problem2_df$vec_char)
+as.numeric(problem2_df$vec_factor)
+```
+The `as.numeric` function produces an numeric output for `vec_logical` comprised of 0's and 1's. 
+The `as.numeric` function does not produce an output for `vec_char`. It outputs NA.
+The `as.numeric` function produces an numeric output for `vec_factor` comprised of 1's, 2's, and 3's. 
+
+
+When the `as.numeric` function is applied to the logic variable `vec_logical`, the outputs for the variable are either 1 (corresponding to TRUE) or 0 (corresponding to FALSE). This explains the output mean for `vec_logical`. When the mean is calculated for `vec_logical`, R takes the TRUE and FALSE values in the dataframe and corresponds it to 1 or 0, and then calculates the mean value, resulting in a valid output when running `mean(problem2_df$vec_logical)`. 
+
+When the `as.numeric` function is applied to the factor variable `vec_factor`, the outputs for the variable are either 1, 2, or 3. These three numbers correspond to the three factor "levels" specified the dataframe. When calculating the mean for `vec_factor`, the factor "levels" were specified as characters, and therefore a mean could not be calculated. However, applying the `as.numeric` function converts the factor "levels" into numeric "levels", resulting in the outputs of 1, 2, or 3. 
+
+The character variable `vec_char`, on the other hand, is comprised of letters and has no numeric value, unlike the logic and factor variables. When the `as.numeric` function is applied to the character variable, it is unable to convert the characters into a numeric variable, resulting in the NA output. 
 
