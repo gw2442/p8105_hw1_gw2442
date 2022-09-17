@@ -1,0 +1,29 @@
+---
+title: "pw8105_hw1_gw2442"
+output: html_document
+date: "2022-09-17"
+---
+
+```{r}
+library(palmerpenguins)
+```
+
+# Problem 1
+Loading the dataset:
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+Names and values of important important variables in dataset "penguins":
+```{r}
+summary (penguins)
+```
+Size of the dataset:
+```{r}
+nrow(penguins) * ncol(penguins)
+```
+Mean flipper length:
+```{r}
+
+```
+
