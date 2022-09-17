@@ -4,7 +4,7 @@ output: github_document
 date: "2022-09-17"
 ---
 
-```{r setup}
+```{r setup, include = FALSE}
 library(palmerpenguins)
 library(tidyverse)
 ```
@@ -35,9 +35,10 @@ The mean flipper length is 200.92 mm.
 
 ### Scatterplot of `flipper_length_mm` (y) vs `bill_length_mm` (x)
 ```{r yx_scatter}
-library(tidyverse)
-data("penguins", package = "palmerpenguins")
-ggplot(penguins, aes (x = bill_length_mm , y = flipper_length_mm, na.rm = TRUE), 
-       color = species) + geom_point()
+ggplot(penguins, aes(x = bill_length_mm , y = flipper_length_mm, 
+                     color = species)) + geom_point(na.rm = TRUE)
+ggsave("penguins_scatter_plot.pdf")
 ```
+
+
 
