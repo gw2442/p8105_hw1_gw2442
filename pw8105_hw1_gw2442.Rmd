@@ -70,9 +70,20 @@ The `as.numeric` function does not produce an output for `vec_char`. It outputs 
 The `as.numeric` function produces an numeric output for `vec_factor` comprised of 1's, 2's, and 3's. 
 
 
-When the `as.numeric` function is applied to the logic variable `vec_logical`, the outputs for the variable are either 1 (corresponding to TRUE) or 0 (corresponding to FALSE). This explains the output mean for `vec_logical`. When the mean is calculated for `vec_logical`, R takes the TRUE and FALSE values in the dataframe and corresponds it to 1 or 0, and then calculates the mean value, resulting in a valid output when running `mean(problem2_df$vec_logical)`. 
+When the `as.numeric` function is applied to the logic variable `vec_logical`, the outputs for the variable are
+either 1 (corresponding to TRUE) or 0 (corresponding to FALSE). This explains the output mean for `vec_logical`.
+When the mean is calculated for `vec_logical`, R takes the TRUE and FALSE values in the dataframe and corresponds
+it to 1 or 0, and then calculates the mean value, resulting in a valid output when running
+`mean(problem2_df$vec_logical)`. 
 
-When the `as.numeric` function is applied to the factor variable `vec_factor`, the outputs for the variable are either 1, 2, or 3. These three numbers correspond to the three factor "levels" specified the dataframe. When calculating the mean for `vec_factor`, the factor "levels" were specified as characters, and therefore a mean could not be calculated. However, applying the `as.numeric` function converts the factor "levels" into numeric "levels", resulting in the outputs of 1, 2, or 3. 
+When the `as.numeric` function is applied to the factor variable `vec_factor`, the outputs for the variable are
+either 1, 2, or 3. These three numbers correspond to the three factor "levels" specified the dataframe. When
+calculating the mean for `vec_factor`, the factor "levels" were specified as characters, and therefore a mean could
+not be calculated. However, applying the `as.numeric` function converts the factor "levels" into numeric "levels",
+resulting in the outputs of 1, 2, or 3. 
 
-The character variable `vec_char`, on the other hand, is comprised of letters and has no numeric value, unlike the logic and factor variables. When the `as.numeric` function is applied to the character variable, it is unable to convert the characters into a numeric variable, resulting in the NA output.
+The character variable `vec_char`, on the other hand, is comprised of letters and has no numeric value, unlike the
+logic and factor variables. When the `as.numeric` function is applied to the character variable, it is unable to
+convert the characters into a numeric variable, resulting in the NA output.
+
 
